@@ -3,14 +3,25 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductsListComponent } from './products-list/products-list.component';
+
+import { FormsModule } from '@angular/forms';
+import { BakeryAboutComponent } from './bakery-about/bakery-about.component';
+import { BakeryProductsComponent } from './bakery-products/bakery-products.component';
+import { BakeryCartComponent } from './bakery-cart/bakery-cart.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ProductsListComponent,
+    BakeryAboutComponent,
+    BakeryProductsComponent,
+    BakeryCartComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
