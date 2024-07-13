@@ -10,6 +10,7 @@ import { BakeryAboutComponent } from './bakery-about/bakery-about.component';
 import { BakeryProductsComponent } from './bakery-products/bakery-products.component';
 import { BakeryCartComponent } from './bakery-cart/bakery-cart.component';
 import { InputNumberComponent } from './input-number/input-number.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { InputNumberComponent } from './input-number/input-number.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
