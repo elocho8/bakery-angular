@@ -1,0 +1,9 @@
+<td>
+    <button class="btn btn-danger btn-sm" (click)="downQuantity()">-</button>
+    <input 
+        type="text" 
+        [value]="quantity" 
+        (input)="onChangeQuantity($event)"
+        >
+    <button class="btn btn-success btn-sm" (click)="upQuantity()">+</button>
+</td>

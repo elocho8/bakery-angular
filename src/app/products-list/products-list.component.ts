@@ -1,5 +1,6 @@
 import { Component, input } from '@angular/core';
 import { Food } from './Food';
+import { ProductCartService } from '../product-cart.service';
 
 @Component({
   selector: 'app-products-list',
@@ -8,6 +9,11 @@ import { Food } from './Food';
 })
 export class ProductsListComponent {
   
+
+  constructor(private cart: ProductCartService) {
+    
+  }
+
   products: Food[] = [
     {
       id : 1,
@@ -52,23 +58,14 @@ export class ProductsListComponent {
   ];
 
 
-  upQuantity(product: Food): void {
-    if(product.quantity < product.stock)
-    product.quantity++;
+  addToCart(product:Food) {
+    this.cart.addToCart(product);
+    product.stock -= product.quantity;
+    product.quantity = 0;
   }
 
-  downQuantity(product: Food): void {
-    if(product.quantity > 0)
-    product.quantity--;
-  }
-
-  onChangeQuantity(event: any, product:Food) {
-    const inputQuantity = event.target.value;
-    if(!isNaN(inputQuantity) && inputQuantity > 0 && inputQuantity <= product.stock){
-      product.quantity = inputQuantity;
-    }else 
-      event.target.value = product.quantity;
-
+  maxReached(m: string){
+    alert(m);
   }
 
 
